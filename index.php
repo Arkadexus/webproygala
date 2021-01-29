@@ -6,7 +6,10 @@
     <title>Gala d'Or</title>
 </head>
 <body>
-    <h1>Esto es un test</h1>
+    <?php
+        include('templates/header.html');
+    ?>
+    <h3>Esto es un test</h3>
     <p>Si esto funciona, significa que la integración con github ha funcionado</p>
     <?php
         $num1 = 2;

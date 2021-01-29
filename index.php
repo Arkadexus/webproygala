@@ -8,5 +8,10 @@
 <body>
     <h1>Esto es un test</h1>
     <p>Si esto funciona, significa que la integración con github ha funcionado</p>
+    <?php
+        $num1 = 2;
+        $num2 = 5;
+        echo($num1+$num2);
+    ?>
 </body>
 </html>

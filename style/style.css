@@ -6,6 +6,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /*Cabecera*/
 header{
     position: fixed;
@@ -13,14 +14,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
     background-color:#49494918;
-    min-height: 10vh;
+    min-height: 11vh;
     z-index: 2;
     width: 100%;
 }
 header img{
-    width:10vh;
+    width:11vh;
+    padding-left: 60px;
 }
 /*Menú navegación*/
 header a{
@@ -30,10 +31,15 @@ header ul{
     list-style: none;
 }
 
+#menu{
+    padding-right: 60px;
+}
+
 #menu li > a{
-    color: #C8BFBE;
+    color: #f7f7f7;
+    font-weight:600;
     text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     display: block;
     min-width: 150px;
     -webkit-transition:all 500ms ease;
@@ -52,6 +58,7 @@ header ul{
     position: absolute;
     min-width: 140px;
     background-color: #ebebeb;
+    padding: 5px;
 }
 #menu li:hover > ul{
     display: block;
@@ -59,12 +66,52 @@ header ul{
 #menu li ul li{
     position: relative;
 }
+#menu li ul li a{
+    color: black;
+    font-weight: 500;
+    position: relative;
+}
 #menu li ul li ul{
     right: -140px;
     top: 0px;
 }
 
-#imagen-principal{
-    width: 100%;
+.mySlides {
+    display:none;
     height: 70vh;
+    width: 100%;
 }
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+.botones{
+    display: flex;
+    justify-content: center;
+}
+.punto {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-flex;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .punto:hover {
+    background-color: #717171;
+  }

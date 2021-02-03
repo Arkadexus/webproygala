@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <title>Gala d'Or</title>
 </head>
 <body>
@@ -16,6 +17,6 @@
         $num2 = 5;
         echo($num1+$num2);
     ?>
-    <script src="scripts/alert.js"></script>
+    <!--<script src="scripts/alert.js"></script>-->
 </body>
 </html>

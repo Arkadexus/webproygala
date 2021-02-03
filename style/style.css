@@ -12,10 +12,47 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
+    background-color:#494949;
+    min-height: 10vh;
 }
 header a{
     text-decoration: none;
 }
 header ul{
     list-style: none;
+}
+
+#menu li > a{
+    color: #C8BFBE;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    min-width: 150px;
+    -webkit-transition:all 500ms ease;
+    -o-transition:all 500ms ease;
+    transition: all 500ms ease;
+}
+#menu li > a:hover{
+    color: #125C72;
+    background-color: #C8BFBE;
+}
+#menu > li{
+    float: left;
+    text-align: center;
+}
+#menu li ul{
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    background-color: #fa1900;
+}
+#menu li:hover > ul{
+    display: block;
+}
+#menu li ul li{
+    position: relative;
+}
+#menu li ul li ul{
+    right: -140px;
+    top: 0px;
 }

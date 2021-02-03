@@ -8,17 +8,22 @@
     <title>Gala d'Or</title>
 </head>
 <body>
+
     <?php
         include('templates/header.html');
     ?>
+
+<div class="contenido">
     <img id="imagen-principal" src="img/hotel-index.jpg" alt="slider primera imagen">
     <h3>Esto es un test</h3>
     <p>Si esto funciona, significa que la integración con github ha funcionadooooo</p>
     <?php
-        $num1 = 2;
-        $num2 = 5;
-        echo($num1+$num2);
+        for($i = 0; $i < 15; $i++){
+            echo("HOLA <br/>");
+        }
     ?>
+</div>
+
     <!--<script src="scripts/alert.js"></script>-->
 </body>
 </html>

@@ -1,5 +1,5 @@
-function showSlides() {
-    var i;
+const showSlides = () =>{
+    let i;
     slides = document.getElementsByClassName("mySlides");
     dots = document.getElementsByClassName("punto");
     for (i = 0; i < slides.length; i++) {
@@ -15,7 +15,7 @@ function showSlides() {
     setTimeout(showSlides, 8000); // Change image every 8 seconds
 }
 
-function plusSlides(position) {
+const plusSlides = (position) =>{
     slideIndex +=position;
     if (slideIndex> slides.length) {slideIndex = 1}
     else if(slideIndex<1){slideIndex = slides.length}
@@ -29,7 +29,7 @@ function plusSlides(position) {
     dots[slideIndex-1].className += " active";
 }
 
-function currentSlide(index) {
+const currentSlide = (index) =>{
     if (index> slides.length) {index = 1}
     else if(index<1){index = slides.length}
     for (i = 0; i < slides.length; i++) {

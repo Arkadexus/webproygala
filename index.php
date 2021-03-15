@@ -18,7 +18,7 @@
 <div class="splide">
 	<div class="splide__track">
 		<ul class="splide__list">
-			<li class="splide__slide"><img src="img/hotel-index.jpg" alt="slide hotel 1"></li>
+            <li class="splide__slide"><h2>Lorem ipsum dolor sit amet</h2><span>Lorem ipsum dolor sit amet</span><img src="img/imageonline-co-darkenimage.png" alt="slide hotel 1"></li>
 			<li class="splide__slide"><img src="img/hotel-index2.jpg" alt="slide hotel 2"></li>
 			<li class="splide__slide"><img src="img/hotel-index3.jpg" alt="slide hotel 2"></li>
 		</ul>
@@ -32,7 +32,7 @@
         }
     ?>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
 <script src="scripts/cargarSlider.js"></script>
+<script src="scripts/sliderHome.js"></script>
 </body>
 </html>

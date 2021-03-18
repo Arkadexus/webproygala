@@ -4,7 +4,7 @@ new Splide( '.splide', {
 	height: '100vh',
     cover: true,
     autoplay: true,
-    interval: 5000,
+    interval: 15000,
     pauseOnHover: false,
     arrows: false,
 } ).mount();

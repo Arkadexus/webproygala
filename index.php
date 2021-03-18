@@ -18,9 +18,9 @@
     <div class="splide">
         <div class="splide__track">
             <ul class="splide__list">
-                <li class="splide__slide"><h2>Lorem <i>ipsum</i> dolor sit amet</h2><span>Lorem ipsum dolor sit amet</span><img src="img/slider1.png" alt="slide hotel 1"></li>
-                <li class="splide__slide"><h2>Lorem ipsum dolor sit amet</h2><span>Lorem ipsum dolor sit amet</span><img src="img/slider2.png" alt="slide hotel 2"></li>
-                <li class="splide__slide"><h2>Lorem ipsum dolor sit amet</h2><span>Lorem ipsum dolor sit amet</span><img src="img/slider3.png" alt="slide hotel 3"></li>
+                <li class="splide__slide"><div class="contenido_slider"><h2>La habitación perfecta <i>cerca del mar</i></h2><span>Precioso hotel ubicado en la Barceloneta,<br> óptimo para turismo en Barcelona y playa.</span></div><img src="img/slider1.png" alt="slide hotel 1"></li>
+                <li class="splide__slide"><div class="contenido_slider"><h2>Experiencia como ninguna otra</h2><span>El hotel y ubicación perfectos para tus vacaciones.</span></div><img src="img/slider2.png" alt="slide hotel 2"></li>
+                <li class="splide__slide"><div class="contenido_slider"><h2>Comida única del mediterraneo</h2><span>Ofrecemos servicio de restaurante con recetas mediterraneas</span></div><img src="img/slider3.png" alt="slide hotel 3"></li>
             </ul>
         </div>
     <!--

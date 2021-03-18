@@ -90,7 +90,6 @@ header ul{
   }
 
   .splide__slide h2{
-      position: absolute;
       color: rgb(255, 255, 255);
       z-index: 5;
       text-align: center;
@@ -100,12 +99,13 @@ header ul{
   }
 
   .splide__slide span{
-    position: absolute;
-    bottom: 40%;
     color: rgb(255, 255, 255);
     z-index: 5;
     text-align: center;
     font-size: 2rem;
     font-weight: 300;
     text-shadow: 4px 4px 5px rgb(61, 61, 61);
+}
+.contenido_slider{
+    text-align: center;
 }

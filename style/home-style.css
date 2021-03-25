@@ -13,15 +13,18 @@ body{
 }
 /*Cabecera*/
 header{
-    position: fixed;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#49494900;
     min-height: 11vh;
     z-index: 2;
     width: 100%;
+    transition: all ease 1s;
+    background: transparent;
+}
+.scrolleado{
+    background: #494949;
 }
 header img{
     width:11vh;

@@ -31,58 +31,78 @@ header img{
     padding-left: 60px;
 }
 /*Menú navegación*/
-header a{
+#menu {
+    list-style-type: none;
+    position: relative;
+  }
+  
+  #menu li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  #menu li:hover {
+    font-style:italic;
+  }
+  
+  #menu li a {
+    color: rgb(240, 240, 240);
     text-decoration: none;
-}
-header ul{
-    list-style: none;
-}
-
-#menu{
-    padding-right: 60px;
-}
-
-#menu li > a{
-    font-size: 1.2rem;
-    color: var(--blanco);
-    font-weight:200;
-    text-decoration: none;
-    padding: 5px;
+    font-size: 16px;
+    padding: 15px;
     display: block;
-    min-width: 100px;
-    -webkit-transition:all 500ms ease;
-    -o-transition:all 500ms ease;
-    transition: all 500ms ease;
-}
-#menu li > a:hover{
-    color: var(--primario);
-}
-#menu > li{
-    float: left;
-    text-align: center;
-}
-#menu li ul{
-    display: none;
+  }
+  
+  #menu ul {
     position: absolute;
-    min-width: 140px;
-    background-color: var(--blanco);
-    padding: 5px;
-}
-#menu li:hover > ul{
+    min-width: 200px;
+    background-color: rgb(36, 36, 36);
+    display: none;
+  }
+  
+  #menu ul li {
     display: block;
-}
-#menu li ul li{
-    position: relative;
-}
-#menu li ul li a{
-    color: black;
-    font-weight: 500;
-    position: relative;
-}
-#menu li ul li ul{
-    right: -140px;
-    top: 0px;
-}
+    background-color: rgb(116, 70, 70);
+  }
+  
+  #menu li:hover ul {
+    display: block;
+  }
+  
+  .fa-caret-down {
+    margin-left: 10px;
+  }
+  
+  nav div {
+    color: rgb(240, 240, 240);
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+  }
+  nav:after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  @media(max-width: 768px) {
+    nav div {
+      display: block;
+    }
+    #menu {
+      display: none;
+      position: static;
+      background-color: rgb(36, 36, 36);
+    }
+  
+    #menu li {
+      display: block;
+    }
+    #menu ul {
+      position: static;
+      background-color: rgb(36, 36, 36);
+    }
+  }
 
   .splide__slide{
     z-index: 1;

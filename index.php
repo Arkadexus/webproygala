@@ -44,5 +44,6 @@
 <script src="scripts/cargarSlider.js"></script>
 <script src="scripts/sliderHome.js"></script>
 <script src="scripts/headerTransparente.js"></script>
+<script src="scripts/menu.js"></script>
 </body>
 </html>

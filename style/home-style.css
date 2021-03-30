@@ -94,7 +94,7 @@ header img{
     clear: both;
     display: table;
   }
-  @media(max-width: 768px) {
+  @media(max-width: 767px) {
     nav div {
       display: block;
     }
@@ -259,6 +259,9 @@ button:hover{
   padding-left: 80px;
   padding-right: 80px;
 }
+#comidas p{
+  text-align: justify;
+}
 #comidasImagen{
   background-image: url(../img/comidas.jpg);
   background-repeat: no-repeat;
@@ -283,6 +286,9 @@ button:hover{
   padding-bottom: 3.5%;
   background-color: #dfdfdf;
 }
+#zonaDigital p{
+  text-align: justify;
+}
 #zdImagen{
   background-image: url(../img/salaordenadores.jpg);
   background-repeat: no-repeat;
@@ -297,10 +303,80 @@ button:hover{
   padding-bottom: 20px;
 }
 
+
+
+
+/* RESPONSIVE TABLET*/
+@media(max-width: 1100px){
+  .contenido section{
+    margin: 0 auto;
+    margin-top: 3.5%;
+    padding: 10px;
+  }
+  #habitacionesYSuites{
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  #habitacionesYSuites img{
+    margin-left: 0;
+    height: 300px;
+    margin: 0;
+  }
+  #hYSContenido{
+    margin: 0;
+    margin-top: -2px;
+    z-index: 1;
+    background-color: #dfdfdf;
+    border: 1px solid #acacac;
+    padding: 10px;
+    text-align: center;
+  }
+  #ofertas{
+    margin-top: 3.5%;
+    padding: 15px;
+  }
+  #ofertas p{
+    text-align: center;
+  }
+  #ofertasActuales{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 0 20px;
+    padding: 0 30px;
+    grid-row-gap: 20px;
+    text-align: center;
+  }
+  #ofertasActuales p{
+    min-height: 0;
+    text-align: center;
+  }
+  #comidas{
+    padding:0 10px;
+    padding-top: 3.5%;
+  }
+  #zonaDigital{
+    padding: 3.5% 10px;
+  }
+  #comidasContenido{
+    padding: 15px;
+    padding-bottom: 100px;
+  }
+}
+
+
+
+
 /* RESPONSIVE MOVIL*/
 @media(max-width: 767px){
   p{
     font-size: 0.9rem;
+  }
+  h2{
+    font-size: 1.5rem!important;
+  }
+  span{
+    font-size: 1.2rem!important;
   }
   h3{
     font-size: 1rem;
@@ -321,6 +397,7 @@ button:hover{
   }
   #hYSContenido{
     margin: 0;
+    margin-top: -3px;
     z-index: 1;
     background-color: #dfdfdf;
     border: 1px solid #acacac;

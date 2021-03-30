@@ -404,4 +404,45 @@ button:hover{
     padding: 10px;
     text-align: center;
   }
+  #ofertas{
+    padding: 10px;
+  }
+  #ofertasActuales{
+    margin: 0px;
+    padding: 0 10px;
+  }
+  #comidas{
+    padding: 3.5% 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 1fr;
+  }
+  #comidasContenido{
+    padding: 10px;
+    text-align: center;
+    grid-row: 2;
+  }
+  #comidasContenido p{
+    text-align: center;
+  }
+  #comidasImagen{
+    max-height: 250px;
+    grid-row: 1;
+  }
+  #zonaDigital{
+    padding: 3.5% 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 1fr;
+  }
+  #zdContenido{
+    padding: 10px;
+    text-align: center;
+  }
+  #zdContenido p{
+    text-align: center;
+  }
+  #zdImagen{
+    max-height: 250px;
+  }
 }

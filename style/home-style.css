@@ -1,14 +1,20 @@
 /* Estilo base*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+h1, h2, h3, h4, h5, h6{
+  color: #3e3e3e;
+  text-transform: uppercase;
+}
 * {
     margin:0px;
     padding:0px;
 }
 body{
-    font-family: freight-big-pro, serif, Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif, serif, Arial, Helvetica;
+    background-color: #f7f7f7;
 }
 /*VARIABLES*/
 :root{
-    --primario: #f29b18;
+    --primario: #daa520;
     --blanco: #ffffff;
 }
 /*Cabecera*/
@@ -24,7 +30,7 @@ header{
     background: transparent;
 }
 .scrolleado{
-    background: #494949;
+    background: #7e6f5c;
 }
 header img{
     width:11vh;
@@ -34,6 +40,7 @@ header img{
 #menu {
     list-style-type: none;
     position: relative;
+    padding-right: 60px;
   }
   
   #menu li {
@@ -42,7 +49,7 @@ header img{
   }
   
   #menu li:hover {
-    font-style:italic;
+    text-decoration: underline;
   }
   
   #menu li a {
@@ -72,7 +79,9 @@ header img{
   .fa-caret-down {
     margin-left: 10px;
   }
-  
+  .fa-bars{
+    padding-right: 60px;
+  }
   nav div {
     color: rgb(240, 240, 240);
     font-size: 24px;
@@ -93,6 +102,7 @@ header img{
       display: none;
       position: static;
       background-color: rgb(36, 36, 36);
+      padding-right: 60px;
     }
   
     #menu li {
@@ -131,4 +141,190 @@ header img{
 }
 .contenido_slider{
     text-align: center;
+}
+
+p{
+  font-size: 1.2rem;
+  line-height: 25px;
+  color: #3e3e3e;
+}
+h2{
+  font-size: 1.5rem;
+}
+.tituloAlt{
+  color:var(--primario);
+  text-transform: uppercase;
+}
+h3{
+  color: var(--primario);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.contenido{
+  margin: 0 auto;
+}
+.contenido section{
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 3.5%;
+  padding: 0 30px;
+}
+#habitacionesYSuites{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#habitacionesYSuites img{
+  width: 100%;
+  margin-left: -80px;
+  object-fit: cover;
+  height: 75%;
+}
+#hYSContenido{
+  margin-right: -80px;
+  margin-left: 80px;
+  z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 220px;
+  background-color: #dfdfdf;
+  border: 1px solid #acacac;
+  padding: 30px;
+  text-align: justify;
+}
+@media (max-width: 1228px){
+  #habitacionesYSuites img{
+    height: 80%;
+  }
+}
+button{
+  background-color: var(--primario);
+  border: 1px solid var(--primario);
+  padding: 5px 15px;
+  font-size: 1.2rem;
+  color: white;
+}
+button:hover{
+  background-color: white;
+  color:var(--primario);
+  cursor:pointer;
+}
+#ofertas{
+  margin-top: -100px;
+  padding: 30px;
+  background-color: #c5baac;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+#ofertas h2{
+  text-align: center;
+  padding-bottom: 20px;
+  font-size: 2rem;
+}
+#ofertas p{
+  text-align: justify;
+  padding-bottom: 20px;
+}
+#ofertasActuales{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5%;
+  margin: 0 100px;
+}
+#ofertasActuales div{
+  background-color:#dfdfdf;
+}
+#ofertasActuales img{
+  width: 100%;
+  object-fit: cover;
+  height: 250px;
+}
+#ofertasActuales p{
+  min-height: 125px;
+}
+#ofertasActuales button{
+  margin-top: 20px;
+}
+@media(max-width: 1516px){
+  #ofertasActuales p{
+    min-height: 200px;
+  }
+}
+.ofertasContenido{
+  padding: 30px;
+}
+
+#comidas{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+#comidasImagen{
+  background-image: url(../img/comidas.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#comidasContenido{
+  padding: 30px;
+  padding-bottom: 100px;
+}
+#comidasContenido *{
+  padding-bottom: 20px;
+}
+
+#zonaDigital{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 3.5%;
+  padding-bottom: 3.5%;
+  background-color: #dfdfdf;
+}
+#zdImagen{
+  background-image: url(../img/salaordenadores.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#zdContenido{
+  padding: 30px;
+  padding-bottom: 100px;
+}
+#zdContenido *{
+  padding-bottom: 20px;
+}
+
+/* RESPONSIVE MOVIL*/
+@media(max-width: 767px){
+  p{
+    font-size: 0.9rem;
+  }
+  h3{
+    font-size: 1rem;
+  }
+  .contenido section{
+    margin: 0 auto;
+    margin-top: 3.5%;
+    padding: 0;
+  }
+  #habitacionesYSuites{
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  #habitacionesYSuites img{
+    margin-left: 0;
+    height: 220px;
+    margin: 0;
+  }
+  #hYSContenido{
+    margin: 0;
+    z-index: 1;
+    background-color: #dfdfdf;
+    border: 1px solid #acacac;
+    padding: 10px;
+    text-align: center;
+  }
 }

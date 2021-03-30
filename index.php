@@ -17,7 +17,7 @@
     ?>
 <div class="contenido">
 <!-- Slider -->
-    <div class="splide">
+    <div class="splide anchoCompleto">
         <div class="splide__track">
             <ul class="splide__list">
                 <li class="splide__slide"><div class="contenido_slider"><h2>La habitación perfecta <i>cerca del mar</i></h2><span>Precioso hotel ubicado en la Barceloneta,<br> óptimo para turismo en Barcelona y playa.</span></div><img src="img/slider1.png" alt="slide hotel 1"></li>
@@ -33,13 +33,69 @@
     https://pixabay.com/es/photos/caf%C3%A9-hotel-cama-holiday-servicio-4507707/
     -->
     </div>
-    <h3>Esto es un test</h3>
-    <p>Si esto funciona, significa que la integración con github ha funcionadooooo</p>
-    <?php
-        for($i = 0; $i < 50; $i++){
-            echo("<p>HOLA</p>");
-        }
-    ?>
+    <section id="habitacionesYSuites">
+        <div id="hYSContenido">
+            <div>
+            <h3>Habitaciones y Suites</h3>
+            <p>Disfrute de las gloriosas vistas a las aguas cristalinas del mar Mediterráneo en nuestras 50 habitaciones y suites. Gala d’Or está en una ubicación cercana a la playa, incluye interiores elegantes y un servicio impecable, incluida la asistencia de nuestros amables conserjes. Disponemos de un servicio de comida propio y además cerca nuestro hay una elegante selección de bares y restaurantes de destino, spas de lujo, y otros comercios.</p><br>
+            <p>Tenemos la intención de adaptarnos a todos los tipos de cliente, por lo que además incluimos suites de centros de conferencias contemporáneos, que son impresionantes y flexibles. Diseño interior de felpa, franjas de luz natural e imagen, el panorama perfecto del mar las hace populares como opción para bodas y otros eventos hechos a medida como negocios. Reserve sus vacaciones o evento con nosotros y consulte nuestras ofertas especiales para experimentar lo mejor que la costa mediterránea tiene para ofrecer.</p>
+            <br><button>Descubre Más</button>
+            </div>
+        </div>
+        <div id="HYSImagen">
+            <img src="img/playa_barcelona.jpg" alt="playa de barcelona">
+        </div>
+    </section>
+
+    <section id="ofertas">
+        <h2>Ofertas</h2>
+        <p>Aproveche las ofertas exclusivas al reservar directamente con Gala d’Or. Ya sea que esté buscando explorar Barcelona y otras partes de la hermosa costa catalana, o tal vez sólo desee un fin de semana de distancia, nuestras ofertas están adaptadas para satisfacer sus necesidades. Desde detalles sencillos para mejorar su experiencia de vacaciones, hasta itinerarios a medida que le ayudan a explorar el rico patrimonio del destino, sus museos y atracciones; nuestras ofertas especiales están diseñadas para adaptarse a los servicios y comodidades más solicitados de nuestros huéspedes.</p>
+        <div id="ofertasActuales">
+            <div>
+                <img src="img/hotel-index.jpg" alt="Quedate mas">
+                <div class="ofertasContenido">
+                    <h3>Quédate más</h3>
+                    <p>¡Tómate un poco más de tiempo!  Si está cinco noches con nosotros, le daremos un descuento.</p>
+                    <button>Saber Más</button>
+                </div>
+            </div>
+            <div>
+                <img src="img/ofertaComida.jpg" alt="Comida incluida">
+                <div class="ofertasContenido">
+                    <h3>Comida Incluida</h3>
+                    <p>Si su reserva cuesta más de 125€, le ofreceremos un día gratuito de nuestro servicio de restaurante.</p>
+                    <button>Saber Más</button>
+                </div>
+            </div>
+            <div>
+                <img src="img/turismo.jpg" alt="Ofertas contenido">
+                <div class="ofertasContenido">
+                    <h3>Turismo por Barcelona</h3>
+                    <p>Por (precio placeholder) por noche, le ofrecemos un servicio de turismo donde un guía de  habla inglesa estará a su  disposición por 2 horas al día.</p>
+                    <button>Saber Más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comidas">
+        <div id="comidasContenido">
+            <h2 class="tituloAlt">Comidas</h2>
+            <p>Disponemos de un servicio de restaurante que le dará a conocer la comida mediterránea y de la magnífica cultura culinaria española. Le proporcionamos solo lo mejor de la cocina, preparando tanto platos clásicos como los más modernos. Si incluye el servicio de restaurante en su reserva, se le aplicarán las mismas ofertas que aplicamos con las habitaciones. </p>
+            <p>Si además quiere probar otros lugares, tenemos una gran cantidad de restaurantes y bares cerca del hotel, perfecto para sus actividades de turismo.</p>
+        </div>
+        <div id="comidasImagen">
+        </div>
+    </section>
+    <section id="zonaDigital">
+        <div id="zdImagen">
+        </div>
+        <div id="zdContenido">
+            <h2 class="tituloAlt">Zona Digital</h2>
+            <p>Disponemos de un servicio de restaurante que le dará a conocer la comida mediterránea y de la magnífica cultura culinaria española. Le proporcionamos solo lo mejor de la cocina, preparando tanto platos clásicos como los más modernos. Si incluye el servicio de restaurante en su reserva, se le aplicarán las mismas ofertas que aplicamos con las habitaciones. </p>
+            <p>Si además quiere probar otros lugares, tenemos una gran cantidad de restaurantes y bares cerca del hotel, perfecto para sus actividades de turismo.</p>
+        </div>
+    </section>
 </div>
 <script src="scripts/cargarSlider.js"></script>
 <script src="scripts/sliderHome.js"></script>

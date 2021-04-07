@@ -1,0 +1,453 @@
+/*VARIABLES*/
+:root{
+  --primario: #daa520;
+  --blanco: #ffffff;
+  --texto: #3e3e3e;
+}
+/* Estilo base*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+h1, h2, h3, h4, h5, h6{
+  color: var(--texto);
+  text-transform: uppercase;
+}
+* {
+    margin:0px;
+    padding:0px;
+}
+body{
+    font-family: 'Lato', sans-serif, serif, Arial, Helvetica;
+    background-color: #f7f7f7;
+    margin: 0 0 100px;
+}
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+/*Cabecera*/
+header{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 11vh;
+    z-index: 2;
+    width: 100%;
+    transition: all ease 1s;
+    background: #7e6f5c;
+}
+
+header img{
+    width:11vh;
+    padding-left: 60px;
+}
+/*Menú navegación*/
+#menu {
+    list-style-type: none;
+    position: relative;
+    padding-right: 60px;
+  }
+  
+  #menu li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  #menu li:hover {
+    text-decoration: underline;
+  }
+  
+  #menu li a {
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    font-size: 16px;
+    padding: 15px;
+    display: block;
+  }
+  
+  #menu ul {
+    position: absolute;
+    min-width: 200px;
+    background-color: rgb(36, 36, 36);
+    display: none;
+  }
+  
+  #menu ul li {
+    display: block;
+    background-color: rgb(116, 70, 70);
+  }
+  
+  #menu li:hover ul {
+    display: block;
+  }
+  
+  .fa-caret-down {
+    margin-left: 10px;
+  }
+  .fa-bars{
+    padding-right: 60px;
+  }
+  nav div {
+    color: rgb(240, 240, 240);
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+  }
+  nav:after{
+    content: '';
+    clear: both;
+    display: table;
+  }
+  @media(max-width: 767px) {
+    nav div {
+      display: block;
+    }
+    #menu {
+      display: none;
+      position: static;
+      background-color: rgb(36, 36, 36);
+      padding-right: 60px;
+    }
+  
+    #menu li {
+      display: block;
+    }
+    #menu ul {
+      position: static;
+      background-color: rgb(36, 36, 36);
+    }
+  }
+  footer{
+    background-color: #7e6f5c;
+    min-height: 80px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #iconosFooter{
+    font-size:48px;
+    padding: 0 15px;
+    padding-left: 40px;
+  }
+
+  #iconosFooter a{
+    text-decoration: none;
+    color: var(--primario);
+    transition: all 0.5s;
+  }
+  
+  footer .fa{
+    padding-right: 15px;
+  }
+  
+  #iconosFooter a:hover{
+    color: white;
+  }
+
+  p{
+    font-size: 1.2rem;
+    line-height: 25px;
+    color: var(--texto);
+  }
+  h2{
+    font-size: 1.5rem;
+  }
+  .tituloAlt{
+    color:var(--primario);
+    text-transform: uppercase;
+  }
+  h3{
+    color: var(--primario);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  label{
+      font-size: 1.2rem;
+  }
+  input{
+    font-size: 20px;
+    color: var(--texto);
+    padding: 5px;
+    width: 100%;
+    font-family: 'Lato', sans-serif, serif, Arial, Helvetica!important;
+  }
+  input:focus {
+    outline-color: var(--primario);
+    }
+    textarea:focus {
+      outline-color: var(--primario);
+      }
+
+  input[type="reset"], input[type="submit"]{
+    width: auto;
+    padding: 5px 15px;
+    border: 1px solid var(--primario);
+    background-color: var(--primario);
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    transition: all 0.5s;
+  }
+
+  input[type="reset"]:hover, input[type="submit"]:hover{
+    background-color: white;
+    color: var(--primario);
+  }
+
+  .formBoton{
+    display: flex;
+    justify-content: center;
+  }
+  select{
+    font-size: 20px!important;
+    color: var(--texto)!important;
+    padding: 5px!important;
+    width: 100%!important;
+  }
+
+  .contenido{
+    margin: 0 auto;
+  }
+  .contenido section{
+    max-width: 1920px;
+    margin: 0 auto;
+    margin-top: 3.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .anchoReducido{
+      max-width: 1366px!important;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  #registro{
+      background-color: #dfdfdf;
+      border: 1px solid #838383;
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      row-gap: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  #login{
+    background-color: #dfdfdf;
+    border: 1px solid #838383;
+    padding: 50px;
+    max-width: 400px;
+    padding-bottom: 15px;
+  }
+  #login img{
+    display:block;
+    width: 150px;
+    margin: 0 auto;
+    padding-bottom: 25px;
+  }
+  #login label{
+    display: block;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-top: 20px;
+    color:var(--texto);
+  }
+  input[type="checkbox"]{
+    width: auto;
+    margin-right: 10px;
+  }
+  #recuerdame{
+    padding-top: 20px;
+  }
+  #recuerdame label{
+    display: inline!important;
+    font-weight: 500!important;
+    font-size: 1.2rem!important;
+  }
+
+  #EnviarLogin{
+    display: block;
+    width: 100%!important;
+    height: 50px;
+    margin-bottom: 25px;
+  }
+
+  #login a{
+    display: flex;
+    justify-content: center;
+  }
+
+  #fondoEspecial{
+      background-color: #dfdfdf;
+  }
+
+  #contactar{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    margin-top: 25px;
+  }
+  #introContactar h2, #introContactar h3, #introContactar p{
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  hr{
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  #introContactar hr{
+    width:75%;
+  }
+  #contactar1, #contactar2{
+    padding: 50px;
+  }
+  #contactar1 input{
+    margin-bottom: 25px;
+  }
+  #contactar2 iframe{
+    width: 100%;
+    height: 45%;
+  }
+  #contactar2 div{
+    color: var(--texto);
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+  #contactar2 span::after{
+    content:"\A\A";
+    white-space: pre;
+  }
+  #contactar2 .fa{
+    width: 15px;
+    padding-right: 20px;
+  }
+  #contactar2 span{
+    padding-bottom: 20px;
+  }
+  textarea{
+    width: 100%;
+    padding: 5px;
+    font-size: 20px;
+    color: var(--texto);
+    font-weight: 500;
+    font-family: 'Lato', sans-serif, serif, Arial, Helvetica;
+    margin-bottom: 25px;
+    resize: none;
+  }
+
+  #micuenta{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 50px;
+  }
+  #datosUsuario{
+    display: flex;
+    align-items: center;
+  }
+  #datosUsuario img{
+    padding-right: 5px;
+  }
+  #datosUsuario span{
+    font-size: 2rem;
+    max-width: 150px;
+  }
+  #menuUsuario{
+    padding: 30px;
+    background-color: #dfdfdf;
+  }
+  #menuUsuario ul{
+    list-style: none;
+    padding: 5px;
+  }
+  #menuUsuario h4{
+    font-size: 1.2rem;
+  }
+  #menuUsuario li{
+    font-size: 1.2rem;
+  }
+  #escritorio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 50px;
+    padding: 0 30px;
+  }
+  #escritorio div{
+    width: 75%;
+    margin: 0 auto;
+    background-color: var(--primario);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    padding: 50px;
+    border: 1px solid;
+    transition: all 0.5s;
+  }
+  #escritorio div:hover{
+    color:var(--primario);
+    border: 1px solid var(--primario);
+    background-color: white;
+  }
+  #escritorio a{
+    text-decoration: none;
+  }
+  #escritorio .fa{
+    font-size: 5rem;
+    display: block;
+    width: 100%;
+  }
+  #escritorio .fa::after{
+    content:"\A";
+    white-space: pre;
+  }
+  .estiloEnlace{
+    color:var(--texto);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.5s;
+  }
+  .estiloEnlace:hover{
+    color:var(--primario);
+  }
+  /* RESPONSIVE TABLET */
+  @media(max-width: 1100px){
+    .contenido section{
+      margin: 0 auto;
+      margin-top: 3.5%;
+      padding: 10px;
+    }
+  }
+  
+  
+  /* RESPONSIVE MOVIL*/
+  @media(max-width: 767px){
+    p{
+      font-size: 0.9rem;
+    }
+    h2{
+      font-size: 1.5rem!important;
+    }
+    span{
+      font-size: 1.2rem!important;
+    }
+    h3{
+      font-size: 1rem;
+    }
+    .contenido section{
+      margin: 0 auto;
+      margin-top: 3.5%;
+      padding: 0;
+    }
+  }

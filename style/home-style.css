@@ -11,6 +11,11 @@ h1, h2, h3, h4, h5, h6{
 body{
     font-family: 'Lato', sans-serif, serif, Arial, Helvetica;
     background-color: #f7f7f7;
+    margin: 0 0 100px;
+}
+html{
+  position: relative;
+  min-height: 100%;
 }
 /*VARIABLES*/
 :root{
@@ -74,6 +79,38 @@ header img{
   
   #menu li:hover ul {
     display: block;
+  }
+
+  footer{
+    background-color: #7e6f5c;
+    min-height: 80px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #iconosFooter{
+    font-size:48px;
+    padding: 0 15px;
+    padding-left: 40px;
+  }
+
+  #iconosFooter a{
+    text-decoration: none;
+    color: var(--primario);
+    transition: all 0.5s;
+  }
+  
+  footer .fa{
+    padding-right: 15px;
+  }
+  
+  #iconosFooter a:hover{
+    color: white;
   }
   
   .fa-caret-down {

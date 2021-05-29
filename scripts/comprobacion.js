@@ -17,15 +17,9 @@ $(document).ready(function()
     type : 'POST',
     url  : 'scripts/username-check.php',
     data : $(this).serialize(),
-    success : function(data)
-        {
-              $("#result").html(data);
-              if(data == "<span style='color:brown;'>Este nombre de usuario ya se ha utilizado</span>"){
-                document.getElementById("Enviar").disabled = true;
-              }else{
-                document.getElementById("Enviar").disabled = false;
-              }
-           }
+    success : function(data){
+      $("#result").html(data);
+    }
     });
     return false;
    
@@ -33,7 +27,6 @@ $(document).ready(function()
   else
   {
    $("#result").html("<span style='color:brown;'>El nombre de usuario debe tener más de 6 letras</span>");
-   document.getElementById("Enviar").disabled = true;
   }
  });
  

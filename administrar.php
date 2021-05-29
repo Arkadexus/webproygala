@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/comprobacion.js"></script>
     <script src="scripts/comprobacion2.js"></script>
-    <title>Gala d'Or - Mi Cuenta</title>
+    <title>Gala d'Or - Administrar</title>
 </head>
 <body id="colorRegistro">
     <?php
         include('templates/header.php');
-        if(isset($_SESSION["usuario"])){
+        if(isset($_SESSION["admin"])){
     ?>
 <div class="contenido">
     <section id="micuenta">
@@ -25,7 +25,7 @@
             <div id="menuUsuario">
                 <h4>Menú</h4>
                 <ul>
-                    <li>Escritorio</li>
+                    <li><a href="micuenta.php" class="estiloEnlace">Escritorio</a></li>
                     <li><a href="misdatos.php" class="estiloEnlace">Mis Datos</a></li>
                     <li><a href="misreservas.php" class="estiloEnlace">Mis Reservas</a></li>
                     <?php
@@ -41,30 +41,27 @@
             </div>
         </div>
         <div id="escritorio">
-            <a href="misdatos.php"><div>
-                <i class="fa fa-address-card"></i><br>
-                <span>Mis Datos</span>
+            <h2>Administrar</h2>
+            <span></span>
+            <a href="usuarios.php"><div>
+                <i class="fa fa-users"></i><br>
+                <span>Usuarios</span>
             </div></a>
-            <a href="misreservas.php"><div>
-                <i class="fa fa-calendar-o"></i><br>
-                <span>Mis Reservas</span>
-            </div></a>
-            <?php
-            if(isset($_SESSION['admin'])){ ?>
-            <a href="administrar.php"><div>
-                <i class="fa fa-server"></i><br>
-                <span>Panel Administración</span>
-            </div></a>
-            <?php
-            }else{ ?>
-            <a href="reservar.php"><div>
+            <a href="habitaciones.php"><div>
                 <i class="fa fa-bed"></i><br>
-                <span>Realizar Reserva</span>
+                <span>Habitaciones</span>
             </div></a>
-            <?php } ?>
-            <a href="scripts/logout.php"><div>
-                <i class="fa fa-sign-out"></i><br>
-                <span>Cerrar Sesión</span>
+            <a href="contactos.php"><div>
+                <i class="fa fa-comments"></i><br>
+                <span>Contactos</span>
+            </div></a>
+            <a href="reservas.php"><div>
+                <i class="fa fa-calendar-check-o"></i><br>
+                <span>Reservas</span>
+            </div></a>
+            <a href="ofertas.php"><div>
+                <i class="fa fa-bookmark-o"></i><br>
+                <span>Ofertas</span>
             </div></a>
         </div>
     </section>

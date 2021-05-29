@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,91 +11,74 @@
     <script src="scripts/comprobacion2.js"></script>
     <title>Gala d'Or - Registro</title>
 </head>
-<body>
+<body id="colorRegistro">
     <?php
         include('templates/header.php');
     ?>
 <div class="contenido">
-    <?php
-        $error = "";
-        require("scripts/conexion.php");
-        if(isset($_POST['username'])){
-            $contrasenya = $_POST['contrasenya'];
-            stripslashes(htmlspecialchars($resultado = $galador->query("INSERT INTO `clientes`(`login`, `contrasenya`, `nombre`, `apellidos`, `genero`, `email`, `telefono`, `tipodoc`, `doc`) VALUES ('".$_POST["username"]."',SHA('$contrasenya'),'".$_POST["nombre"]."','".$_POST["apellidos"]."','".$_POST["genero"]."','".$_POST["mail"]."','".$_POST["telefono"]."','".$_POST["tipoDoc"]."','".$_POST["doc"]."')") or die("Error en la consulta (" . $galador->errno . ") ". $galador->error ))); 
-        }else{
-    ?>
-    <form action="<?php $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" id="formulario" onsubmit="return validacion()">
+    <form method="post" enctype="multipart/form-data" name="formRegistrar" id="formRegistrar">
     <section class="anchoReducido">
-        <div id="registro">
-        <div>
-            <h2>Registrarse</h2>
+        <div id="baseRegistro">
+            <div id="fondoRegistro">
+                <div>
+                <h2>Gala d'Or</h2>
+                <p>Una experiencia para dormir de 5 estrellas a un precio de 1 estrella.</p>  
+                </div>
+            </div>
+            <div id="registro">
+                <div>
+                    <h2>Registrarse</h2>
+                </div>
+                <div id="exito"></div>
+                <div id="error"></div>
+                <div>
+                    <label for="username"><em>Nombre de usuario*</em></label><span id="result"></span><br/>
+                    <input type="text" name="username" id="username" maxlength="45" required>
+                </div>
+                <div>
+                    <label for="mail"><em>Correo Electrónico*</em></label><span id="result2"></span><br/>
+                    <input type="email" name="mail" id="mail" maxlength="45" required>
+                </div>
+                <div>
+                    <label for="contrasenya"><em>Contraseña*</em></label><br/>
+                    <input type="password" name="contrasenya" id="contrasenya" maxlength="45" required>
+                </div>
+                <div>
+                    <label for="repcontrasenya"><em>Repetir Contraseña*</em></label><br/>
+                    <input type="password" name="repcontrasenya" id="repcontrasenya" maxlength="45" required>
+                </div>
+                <div>
+                    <input type="checkbox" name="privacidad" id="privacidad">
+                    <label for="privacidad">Acepto la política de privacidad*</label><br>
+                </div>
+                <div class="formBoton">
+                    <input type="button" value="Registrarse" id ="enviarRegistro" name="enviarRegistro" onclick="validarCheckout()">
+                </div>
+            </div>
         </div>
-        <div></div>
-        <div>
-            <label for="username"><em>Nombre de usuario*</em></label><span id="result"></span><br/>
-            <input type="text" name="username" id="username" maxlength="255" autofocus required>
-        </div>
-        <div>
-            <label for="nombre"><em>Correo Electrónico*</em></label><span id="result2"></span><br/>
-            <input type="email" name="mail" id="mail" maxlength="255" required>
-        </div>
-        <div>
-            <label for="nombre"><em>Contraseña*</em></label><br/>
-            <input type="password" name="contrasenya" id="contrasenya" maxlength="255" required>
-        </div>
-        <div>
-            <label for="nombre"><em>Repetir Contraseña*</em></label><br/>
-            <input type="password" name="repcontrasenya" id="repcontrasenya" maxlength="255" required>
-        </div>
-        <div>
-            <label for="nombre"><em>Nombre*</em></label><br/>
-            <input type="text" name="nombre" id="nombre" maxlength="255" required>
-        </div>
-        <div>
-            <label for="apellidos"><em>Apellidos*</em></label><br/>
-            <input type="text" name="apellidos" id="apellidos" maxlength="255" required>
-        </div>
-        <div>
-            <label for="telefono"><em>Teléfono*</em></label><br/>
-            <input type="tel" name="telefono" id="telefono" maxlength="9" required>
-        </div>
-        <div>
-            <label for="genero"><em>Género*</em></label><br/>
-            <select name="genero" id="genero">
-                <option value="h">Hombre</option>
-                <option value="m">Mujer</option>
-            </select>
-        </div>
-        <div>
-            <label for="tipoDoc"><em>Tipo de Documento*</em></label><br/>
-            <select name="tipoDoc" id="tipoDoc">
-                <option value="D">DNI</option>
-                <option value="P">Pasaporte</option>
-            </select>
-        </div>
-        <div>
-            <label for="doc"><em>Documento*</em></label><br/>
-            <input type="text" name="doc" id="doc" maxlength="9" required>
-        </div>
-        <div>
-            <input type="checkbox" name="polpriv" id="polpriv" required>Acepto la política de privacidad*
-        </div>
-        <div></div>
-        <div class="formBoton">
-            <input type="submit" value="Enviar" id ="Enviar" name="Enviar">
-        </div>
-        <div class="formBoton">
-            <input type="reset" value="Reiniciar" id="Reiniciar">
-        </div>
-        </div>
-    </form>
+        
     </section>
-    <?php
-        }
-    ?>
+    </form>
 </div>
 <?php include("templates/footer.html")?>
 <script src="scripts/menu.js"></script>
 <script src="scripts/validacion.js"></script>
+<!--<script>
+let formulario = document.getElementById('formRegistrar');
+formulario.addEventListener('submit', function (e) {
+    event.preventDefault();
+    $.ajax({
+        url: "scripts/crearCuenta.php",
+        type: "POST",
+        data: $(this).serialize(),
+        success: function (data) {
+            $("#resultado").html("<span style='color:brown;'>El nombre de usuario debe tener más de 6 letras</span>");
+        },
+        error: function (data) {
+            $("#resultado").html("<span style='color:brown;'>El test de usuario debe tener más de 6 letras</span>");
+        }
+    });
+});
+</script>-->
 </body>
 </html>

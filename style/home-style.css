@@ -60,7 +60,7 @@ header img{
   #menu li a {
     color: rgb(240, 240, 240);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1.2rem;
     padding: 15px;
     display: block;
   }
@@ -68,13 +68,12 @@ header img{
   #menu ul {
     position: absolute;
     min-width: 200px;
-    background-color: rgb(36, 36, 36);
+    background-color: #8b8071bb;
     display: none;
   }
   
   #menu ul li {
     display: block;
-    background-color: rgb(116, 70, 70);
   }
   
   #menu li:hover ul {

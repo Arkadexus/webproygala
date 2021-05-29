@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Gala d'Or - Inicio de Sesión</title>
 </head>
-<body>
+<body id="colorRegistro">
     <?php
         include('templates/header.php');
         require("scripts/conexion.php");
@@ -19,13 +19,17 @@
         if(isset($_POST['usuario'])){
             $usuario = $_POST['usuario'];
             $contrasenya = $_POST['contrasenya'];
-            $resultado = $galador->query("SELECT * FROM clientes WHERE login='$usuario' AND contrasenya=SHA('$contrasenya')") or die("Error en la consulta (" . $galador->errno . ") ". $galador->error );
+            $resultado = $galador->query("SELECT * FROM usuarios WHERE login='$usuario' AND contrasenya=SHA('$contrasenya')") or die("Error en la consulta (" . $galador->errno . ") ". $galador->error );
             $filas = mysqli_num_rows($resultado);
             if($filas == 0){
                 echo("Este usuario y/o contraseñas son incorrectos.");
             }else{
                 session_start();
                 $_SESSION["usuario"] = $usuario;
+                $fila = mysqli_fetch_row($resultado);
+                if($fila[6] == 1){
+                    $_SESSION["admin"] = true;
+                }
                 header("location: micuenta.php");
             }
         }else{
@@ -41,8 +45,8 @@
         <div id="recuerdame">
         <input type="checkbox" name="recordar" id="recordar"><label for="recordar">Recuérdame</label><br><br>
         <input type="submit" value="Iniciar Sesión" id ="EnviarLogin">
-        <a href="#" class="estiloEnlace">¿Olvidaste la contraseña?</a><br>
-        <a href="#" class="estiloEnlace">Crear una cuenta</a>
+        <!--<a href="#" class="estiloEnlace">¿Olvidaste la contraseña?</a><br>-->
+        <a href="registro.php" class="estiloEnlace">Crear una cuenta</a>
         </div>
     </section>
     </form>

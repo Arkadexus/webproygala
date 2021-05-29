@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/comprobacion.js"></script>
     <script src="scripts/comprobacion2.js"></script>
-    <title>Gala d'Or - Mi Cuenta</title>
+    <title>Gala d'Or - Usuarios</title>
 </head>
 <body id="colorRegistro">
     <?php

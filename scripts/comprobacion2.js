@@ -20,11 +20,6 @@ $(document).ready(function()
     success : function(data)
         {
               $("#result2").html(data);
-              if(data == "<span style='color:brown;'>Este correo ya se ha utilizado</span>"){
-                document.getElementById("Enviar").disabled = true;
-              }else{
-                document.getElementById("Enviar").disabled = false;
-              }
            }
     });
     return false;

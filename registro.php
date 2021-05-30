@@ -63,22 +63,5 @@
 <?php include("templates/footer.html")?>
 <script src="scripts/menu.js"></script>
 <script src="scripts/validacion.js"></script>
-<!--<script>
-let formulario = document.getElementById('formRegistrar');
-formulario.addEventListener('submit', function (e) {
-    event.preventDefault();
-    $.ajax({
-        url: "scripts/crearCuenta.php",
-        type: "POST",
-        data: $(this).serialize(),
-        success: function (data) {
-            $("#resultado").html("<span style='color:brown;'>El nombre de usuario debe tener más de 6 letras</span>");
-        },
-        error: function (data) {
-            $("#resultado").html("<span style='color:brown;'>El test de usuario debe tener más de 6 letras</span>");
-        }
-    });
-});
-</script>-->
 </body>
 </html>

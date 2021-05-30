@@ -41,8 +41,8 @@
                 WHERE login = '".$_SESSION['usuario']."'") or die ($galador->error);
                 $filausuario = mysqli_fetch_row($usuario);
                 //CREAR MENSAJE EN BBDD
-                $galador -> query("INSERT INTO mensajes(asunto, cuerpo, login, email, telefono)
-                VALUES ('".$_POST['asunto']."', '".$_POST['cuerpo']."', '".$filausuario[0]."', '".$filausuario[4]."', '".$filausuario[5]."')") or die ($galador->error);
+                $galador -> query("INSERT INTO mensajes(asunto, cuerpo, login, email, telefono, fecha)
+                VALUES ('".$_POST['asunto']."', '".$_POST['cuerpo']."', '".$filausuario[0]."', '".$filausuario[4]."', '".$filausuario[5]."', NOW())") or die ($galador->error);
                 $filausuario = mysqli_fetch_row($usuario);
                 echo '<div id="exito" style="display:inline-block">Tu mensaje ha sido recibido. Se te redireccionará en 5 segundos.</div>';
                 header("refresh: 5; url=misreservas.php");

@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.24/r-2.2.7/datatables.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Gala d'Or - Usuarios</title>
+    <title>Gala d'Or - Reservas</title>
 </head>
 <body id="colorRegistro">
     <?php
@@ -30,10 +30,10 @@
                     <li><a href="misreservas.php" class="estiloEnlace">Mis Reservas</a></li>
                     <?php
                     if(isset($_SESSION["admin"])){ ?>
-                    <li><b>Usuarios</b></li>
+                    <li><a href="usuarios.php" class="estiloEnlace">Usuarios</a></li>
                     <li><a href="habitaciones.php" class="estiloEnlace">Habitaciones</a></li>
                     <li><a href="contactos.php" class="estiloEnlace">Contactos</a></li>
-                    <li><a href="reservas.php" class="estiloEnlace">Reservas</a></li>
+                    <li><b>Reservas</b></li>
                     <li><a href="ofertas.php" class="estiloEnlace">Ofertas</a></li>
                     <?php } ?>
                     <li><a href="scripts/logout.php" class="estiloEnlace">Cerrar Sesión</a></li>
@@ -41,32 +41,42 @@
             </div>
         </div>
         <div class="panelAdmin">
-            <h2>Administrar usuarios</h2>
+            <h2>Reservas</h2>
             <div id="exito"></div>
            <table id="tablaAdmin" class="display" cellspacing="0" width="100%">
                <thead>
                     <tr>
-                        <th>Login</th>
-                        <th>Nombre y apellidos</th>
-                        <th>Correo Electrónico</th>
-                        <th>Teléfono</th>
-                        <th>Opciones</th>
+                        <th>Habitación</th>
+                        <th>Precio</th>
+                        <th>Fecha Entrada</th>
+                        <th>Fecha Salida</th>
+                        <th>Nombre Contacto</th>
+                        <th>Mail Contacto</th>
+                        <th>Teléfono Contacto</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                         include("scripts/conexion.php");
-                        $resultado = $galador->query("SELECT *
-                        FROM usuarios
-                        WHERE admin IS NULL") or die ($galador->error);
+                        $resultado = $galador->query("SELECT *, habitacion.nombre as hnom, habitacion.descripcion as hdesc, habitacion.foto as hfoto, DATEDIFF(fecha_f, fecha_i) as noches
+                        FROM habitacion
+                        INNER JOIN reservas on reservas.n_habitacion = habitacion.n_habitacion
+                        INNER JOIN factura on factura.n_factura = reservas.n_factura
+                         ORDER BY fecha_i DESC") or die ($galador->error);
                         while ($fila = mysqli_fetch_array($resultado)){
                     ?>
                     <tr>
-                        <td><?php echo $fila['login']?></td>
-                        <td><?php echo $fila['nombre']?> <?php echo $fila['apellidos']?></td>
+                        <td><?php echo $fila['hnom']?></td>
+                        <td><?php echo $fila['costo']?>€</td>
+                        <td><?php echo $fila['fecha_i']?></td>
+                        <td><?php echo $fila['fecha_f']?></td>
+                        <td><?php echo $fila['nombre'] ?> <?php echo $fila['apellidos']?></td>
                         <td><?php echo $fila['email']?></td>
                         <td><?php echo $fila['telefono']?></td>
-                        <td align="center"><button class="botonEliminar" data-id="<?php echo $fila['login']?>"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                        <td id="estado"><?php echo $fila['estado']?></td>
+                        <td align="center"><button class="botonEliminar" data-id="<?php echo $fila['id_res']?>"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
                     </tr>
                 <?php } ?>
                 </tbody>
@@ -117,16 +127,17 @@
     $("#tablaAdmin").on("click", ".botonEliminar", function(){
         idEliminar = $(this).data('id');
         fila=$(this).parent('td').parent('tr');
+        celda = fila.children("#estado");
         $.ajax({
-            url: "scripts/eliminarUsuario.php",
+            url: "scripts/cancelarReserva.php",
             method: "POST",
             data:{
-                login:idEliminar
+                id_res:idEliminar
             }
         }).done(function(res){
-            $(fila).fadeOut(1000);
-            $("#exito").html("El usuario ha sido eliminado."+res);
+            $("#exito").html("La reserva ha sido cancelada."+res);
             $(exito).fadeIn(1000).css("display","inline-block");
+            $(celda).html("Cancelado");
             $(exito).fadeOut(5000);
         })
     })

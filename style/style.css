@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6 {
 * {
 	margin: 0px;
 	padding: 0px;
+	line-height: 1.5;
 }
 
 body {
@@ -922,7 +923,27 @@ sup {
 	display: none;
 }
 
+#error2 {
+	border: 1px solid #691a17;
+	background-color: #dd443f;
+	color: #691a17;
+	font-weight: 600;
+	padding: 10px;
+	margin-bottom: 10px;
+	display: none;
+}
+
 #exito {
+	border: 1px solid #0b5a00;
+	background-color: #3a902f;
+	color: #0b5a00;
+	font-weight: 600;
+	padding: 10px;
+	margin-bottom: 10px;
+	display: none;
+}
+
+#exito2 {
 	border: 1px solid #0b5a00;
 	background-color: #3a902f;
 	color: #0b5a00;
@@ -1009,6 +1030,44 @@ sup {
 	border: 1px solid black;
 	padding: 30px;
 	padding-top: 10px;
+}
+
+#tablaAdmin_wrapper input{
+	width: auto!important;
+}
+#tablaAdmin_wrapper select{
+	width: auto!important;
+}
+#tablaAdmin_wrapper div{
+	display:inline-block;
+}
+
+.nombreImagen{
+	display: grid!important;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 10px;
+	min-height: 100%;
+}
+
+.dataTables_wrapper .dataTables_filter input, .dataTables_wrapper .dataTables_length select{
+	background-color: white;
+}
+
+.panelAdmin h2{
+	margin-bottom: 20px;
+}
+
+dl, ol, ul {
+    /* margin-top: 0; */
+    margin-bottom: 0rem;
+}
+
+*, ::after, ::before {
+    box-sizing: content-box;
+}
+
+.botonAdmin{
+	margin-bottom: 20px;
 }
   
   /* RESPONSIVE MOVIL*/

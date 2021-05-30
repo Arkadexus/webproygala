@@ -30,7 +30,7 @@
                 }
             }
             if($encuentro == false){
-                $res = $galador->query('SELECT * FROM OFERTAS WHERE id_oferta = '.$_GET['ido'])or die($galador->error); 
+                $res = $galador->query('SELECT * FROM ofertas WHERE id_oferta = '.$_GET['ido'])or die($galador->error); 
                 $fila = mysqli_fetch_row($res);
                 $nombre = $fila['1'];
                 $precio = $fila['3'];
@@ -97,7 +97,7 @@
                 <h2>Añadir a su reserva</h2>
                 <?php
                     include("scripts/conexion.php");
-                    $resultado = $galador -> query("SELECT * FROM OFERTAS ORDER BY nombre ASC") or die ($galador -> error);
+                    $resultado = $galador -> query("SELECT * FROM ofertas WHERE activa=1 ORDER BY nombre ASC") or die ($galador -> error);
                     while ($fila = mysqli_fetch_array($resultado)){
                 ?>
                 <div class="oferta">

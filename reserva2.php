@@ -46,7 +46,6 @@
             }
         }else if(isset($_GET['del'])){ //ELIMINAR DEL CARRITO
             $arrayCarro = $_SESSION['carrito'];
-            print_r ($arrayCarro);
             for($i = 0; $i<count($arrayCarro); $i++){
                 if($i == 0){
                     $arrayTemp[] = array(
@@ -56,7 +55,6 @@
                     );
                 }else{
                     if($arrayCarro[$i]['ID_O'] != $_GET['del']){
-                        echo "hola";
                         $arrayTemp[] = array(
                             'ID_O'=> $arrayCarro[$i]['ID_O'],
                             'Nombre'=> $arrayCarro[$i]['Nombre'],
@@ -216,4 +214,3 @@
 <script src="scripts/calendario.js"></script>
 </body>
 </html>
-<?php print_r($_SESSION['carrito']);?>

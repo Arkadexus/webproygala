@@ -373,13 +373,13 @@ input[type="button"] {
 	background-color: var(--primario);
 	color: white;
 	border: 1px solid var(--primario);
-	padding: 10px 15px;
 	font-size: 1rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	transition: all 0.5s;
 	width: auto;
 	margin-top: 20px;
+	padding: 10px 15px;
 }
 
 input[type="button"]:hover {
@@ -398,11 +398,13 @@ input[type="button"]:hover {
 	font-size: 1.2rem!important;
 }
 
-#EnviarLogin {
+.EnviarLogin {
 	display: block;
 	width: 100%!important;
 	height: 50px;
 	margin-bottom: 25px;
+	margin-top: 0!important;
+	padding: 5px!important;
 }
 
 #login a {

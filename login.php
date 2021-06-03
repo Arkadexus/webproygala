@@ -12,50 +12,76 @@
 <body id="colorRegistro">
     <?php
         include('templates/header.php');
-        require("scripts/conexion.php");
         if(isset($_SESSION["usuario"])){
             header("location: micuenta.php");
         }
-        if(isset($_POST['usuario'])){
-            $usuario = $_POST['usuario'];
-            $contrasenya = $_POST['contrasenya'];
-            $resultado = $galador->query("SELECT * FROM usuarios WHERE login='$usuario' AND contrasenya=SHA('$contrasenya')") or die("Error en la consulta (" . $galador->errno . ") ". $galador->error );
-            $filas = mysqli_num_rows($resultado);
-            if($filas == 0){
-                echo("Este usuario y/o contraseñas son incorrectos.");
-            }else{
-                session_start();
-                $_SESSION["usuario"] = $usuario;
-                $fila = mysqli_fetch_row($resultado);
-                if($fila[6] == 1){
-                    $_SESSION["admin"] = true;
-                }
-                header("location: micuenta.php");
-            }
-        }else{
     ?>
 <div class="contenido">
-    <form action="<?php $_SERVER['PHP_SELF']?>" method="post" enctype="multipart/form-data" id="inicioSesion">
+    <form  enctype="multipart/form-data" id="inicioSesion">
     <section id="login">
         <img src="img/logo_small.png" alt="Gala d'Or">
+        <div id="error"></div>
         <label for="usuario">Nombre de Usuario</label>
-        <input type="text" name="usuario" id="usuario" minlength="6" autofocus required>
+        <input type="text" name="usuario" id="usuario" minlength="6">
         <label for="contrasenya">Contraseña</label>
-        <input type="password" name="contrasenya" id="contrasenya" minlength="6" required>
+        <input type="password" name="contrasenya" id="contrasenya" minlength="6">
         <div id="recuerdame">
         <input type="checkbox" name="recordar" id="recordar"><label for="recordar">Recuérdame</label><br><br>
-        <input type="submit" value="Iniciar Sesión" id ="EnviarLogin">
+        <input type="button" value="Iniciar Sesión" class="EnviarLogin">
         <!--<a href="#" class="estiloEnlace">¿Olvidaste la contraseña?</a><br>-->
         <a href="registro.php" class="estiloEnlace">Crear una cuenta</a>
         </div>
     </section>
     </form>
 </div>
-<?php
-        }
-        ?>
 <?php include("templates/footer.html")?>
 <script src="scripts/menu.js"></script>
-<script src="scripts/validacion.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".EnviarLogin").click(function(){
+            let nombre = document.getElementById("usuario").value;
+            let contrasenya = document.getElementById("contrasenya").value;
+
+            if (nombre.length == 0 || nombre == null || /^\s+$/.test(nombre) || 
+            contrasenya.length == 0 || contrasenya == null || /^\s+$/.test(contrasenya)){
+                $("#error").html("Todos los campos son obligatorios.");
+                $(error).fadeIn(1000).css("display","inline-block");
+                $(error).fadeOut(5000);
+                return 0;
+            }
+
+            if(contrasenya.length < 6){
+                $("#error").html("La contraseña debe tener 6 o más carácteres.");
+                $(error).fadeIn(1000).css("display","inline-block");
+                $(error).fadeOut(5000);
+                return 0;
+            }
+
+            var formData = new FormData(document.getElementById("inicioSesion"));
+
+            $.ajax({
+            url: "scripts/comprobarUsuario.php",
+            type: "POST",
+            data:{
+                usuario: nombre,
+                contrasenya: contrasenya
+            },
+                success: function (data) {
+                    if(data == ""){
+                        location.replace("micuenta.php");
+                    }
+                    $("#error").html(data);
+                    $(error).fadeIn(1000).css("display","inline-block");
+                    $(error).fadeOut(5000);
+                },
+                error: function (data) {
+                    $("#error").html("Ha habido un error iniciando sesión. Inténtelo de nuevo.");
+                    $(error).fadeIn(1000).css("display","inline-block");
+                    $(error).fadeOut(5000);
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

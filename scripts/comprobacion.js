@@ -1,7 +1,6 @@
 $(document).ready(function()
 {    
- $("#username").keyup(function()
- {  
+ $("#username").keyup(function() {  
   var name = $(this).val(); 
   
   if(name.length > 5)

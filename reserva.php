@@ -58,7 +58,7 @@
                     $FECHA_E = date("Y-m-d", strtotime($FECHA_E));
                     $FECHA_S = str_replace('/', '-', $_COOKIE["fechaSalida"]);  
                     $FECHA_S = date("Y-m-d", strtotime($FECHA_S));  
-                    $resultado = $galador -> query("SELECT DISTINCT * FROM habitacion WHERE n_habitacion NOT IN (SELECT n_habitacion FROM reservas WHERE (fecha_f >= '$FECHA_S' OR fecha_i <= '$FECHA_E') OR (fecha_f <= '$FECHA_S' OR fecha_i >= '$FECHA_E') AND (estado = 'Pagado')) GROUP BY nombre ORDER BY n_habitacion ASC") or die ($galador -> error);
+                    $resultado = $galador -> query("SELECT DISTINCT * FROM habitacion WHERE n_habitacion NOT IN (SELECT n_habitacion FROM reservas WHERE (fecha_f > '$FECHA_E' AND fecha_i <= '$FECHA_S') AND (estado = 'Pagado')) GROUP BY nombre ORDER BY n_habitacion ASC") or die ($galador -> error);
                     while ($fila = mysqli_fetch_array($resultado)){
                 ?>
                 <div class="habitacion" id="<?php echo $fila['nombre']?>">

@@ -46,18 +46,27 @@
             }
         }else if(isset($_GET['del'])){ //ELIMINAR DEL CARRITO
             $arrayCarro = $_SESSION['carrito'];
-            $encuentro = false;
-            for($i = 1; $i<count($arrayCarro); $i++){
-                if($arrayCarro[$i]['ID_O'] == $_GET['del']){
-                    $encuentro = true;
-                    $numero = $i;
-                    break;
+            print_r ($arrayCarro);
+            for($i = 0; $i<count($arrayCarro); $i++){
+                if($i == 0){
+                    $arrayTemp[] = array(
+                        'Id' => $arrayCarro[$i]['Id'],
+                        'Nombre' => $arrayCarro[$i]['Nombre'],
+                        'Precio' => $arrayCarro[$i]['Precio'],
+                    );
+                }else{
+                    if($arrayCarro[$i]['ID_O'] != $_GET['del']){
+                        echo "hola";
+                        $arrayTemp[] = array(
+                            'ID_O'=> $arrayCarro[$i]['ID_O'],
+                            'Nombre'=> $arrayCarro[$i]['Nombre'],
+                            'Precio'=> $arrayCarro[$i]['Precio'],
+                            'PorNoche' => $arrayCarro[$i]['PorNoche'],
+                        );
+                    }
                 }
             }
-            if($encuentro == true){
-                unset($arrayCarro[$numero]);
-                $_SESSION['carrito'] = $arrayCarro;
-            }
+            $_SESSION['carrito'] = $arrayTemp;
         }
     }
     if(isset($_COOKIE["fechaInicio"]) && isset($_COOKIE["fechaSalida"])){
@@ -116,11 +125,13 @@
                             $total = $arrayCarrito[0]["Precio"]*$noches;
                         }
                         $encuentroCarrito = false;
-                        for($i = 1; $i<count($arrayCarrito); $i++){
-                            if($arrayCarrito[$i]['ID_O'] == $fila["id_oferta"]){
-                                $encuentroCarrito = true;
-                            }
-                         }
+                        if(isset($arrayCarrito[1])){
+                            for($i = 1; $i<count($arrayCarrito); $i++){
+                                if($arrayCarrito[$i]['ID_O'] == $fila["id_oferta"]){
+                                    $encuentroCarrito = true;
+                                }
+                             }
+                        }
                          if($encuentroCarrito == false){
                          ?>
                         <a href="reserva2.php?ido=<?php echo $fila[0];?>"><button>Añadir a la reserva</button></a>
@@ -205,3 +216,4 @@
 <script src="scripts/calendario.js"></script>
 </body>
 </html>
+<?php print_r($_SESSION['carrito']);?>

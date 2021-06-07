@@ -1,6 +1,12 @@
+var x = window.matchMedia("(max-width: 767px)")
+if(x.matches){
+    months = 1;
+}else{
+    months = 2;
+}
 $(".datepicker").datepicker({
     minDate: 0,
-    numberOfMonths: 2,
+    numberOfMonths: months,
     beforeShowDay: function(date) {
         var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
         var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());

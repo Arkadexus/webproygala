@@ -24,7 +24,7 @@
                 <h4>Menú</h4>
                 <ul>
                     <li><a href="micuenta.php" class="estiloEnlace">Escritorio</a></li>
-                    <li>Mis Datos</li>
+                    <li><b>Mis Datos</b></li>
                     <li><a href="misreservas.php" class="estiloEnlace">Mis Reservas</a></li>
                     <?php
                     if(isset($_SESSION["admin"])){ ?>
@@ -71,7 +71,7 @@
                 </div>
                 <div>
                     <input type="checkbox" name="privacidad" id="privacidad">
-                    <label for="privacidad">Acepto la política de privacidad*</label>
+                    <label for="privacidad">Acepto la <a href="privacidad.php" target="_blank">política de privacidad</a>*</label>
                 </div>
                 <div></div>
                 <div class="formBoton">

@@ -147,7 +147,7 @@
                 ?>
                 <h2>Consentimiento</h2>
                 <input type="checkbox" name="privacidad" id="privacidad">
-                <label for="privacidad">Acepto la política de privacidad*</label><br>
+                <label for="privacidad">Acepto la <a href="privacidad.php" target="_blank">política de privacidad</a>*</label><br>
                 <input type="checkbox" name="condiciones" id="condiciones">
                 <label for="condiciones">Acepto las condiciones de reserva*</label><br>
 

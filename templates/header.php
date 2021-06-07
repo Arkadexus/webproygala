@@ -26,15 +26,15 @@
             <li><a href="reservar.php">Reservar</a></li>
             <li><a href="#">El Hotel <i class="fa fa-caret-down"></i></a>
                 <ul>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Galería</a></li>
+                    <li><a href="aboutus.php">Sobre Nosotros</a></li>
+                    <li><a href="mantenimiento.php">Galería</a></li>
                 </ul>
             </li>
             <li><a href="#">Servicios <i class="fa fa-caret-down"></i></a>
                 <ul>
-                    <li><a href="#">Gastronomía</a></li>
-                    <li><a href="#">Turismo</a></li>
-                    <li><a href="#">Zona Digital</a></li>
+                    <li><a href="mantenimiento.php">Gastronomía</a></li>
+                    <li><a href="mantenimiento.php">Turismo</a></li>
+                    <li><a href="mantenimiento.php">Zona Digital</a></li>
                 </ul>
             </li>
             <li><a href="contactar.php">Contactar</a></li>

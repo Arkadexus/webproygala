@@ -26,13 +26,16 @@
             </ul>
         </div>
     </div>
+    <div id="botonReservar">
+        <a href="reservar.php"><button>Reservar</button></a>
+    </div>
     <section id="habitacionesYSuites">
         <div id="hYSContenido">
             <div>
             <h3>Habitaciones y Suites</h3>
             <p>Disfrute de las gloriosas vistas a las aguas cristalinas del mar Mediterráneo en nuestras 50 habitaciones y suites. Gala d’Or está en una ubicación cercana a la playa, incluye interiores elegantes y un servicio impecable, incluida la asistencia de nuestros amables conserjes. Disponemos de un servicio de comida propio y además cerca nuestro hay una elegante selección de bares y restaurantes de destino, spas de lujo, y otros comercios.</p><br>
             <p>Tenemos la intención de adaptarnos a todos los tipos de cliente, por lo que además incluimos suites de centros de conferencias contemporáneos, que son impresionantes y flexibles. Diseño interior de felpa, franjas de luz natural e imagen, el panorama perfecto del mar las hace populares como opción para bodas y otros eventos hechos a medida como negocios. Reserve sus vacaciones o evento con nosotros y consulte nuestras ofertas especiales para experimentar lo mejor que la costa mediterránea tiene para ofrecer.</p>
-            <br><button>Descubre Más</button>
+            <br><a href="reservar.php"><button>Reservar</button></a>
             </div>
         </div>
         <div id="HYSImagen">
@@ -49,7 +52,6 @@
                 <div class="ofertasContenido">
                     <h3>Quédate más</h3>
                     <p>¡Tómate un poco más de tiempo!  Si está cinco noches con nosotros, le daremos un descuento.</p>
-                    <button>Saber Más</button>
                 </div>
             </div>
             <div>
@@ -57,7 +59,6 @@
                 <div class="ofertasContenido">
                     <h3>Comida Incluida</h3>
                     <p>Si su reserva cuesta más de 125€, le ofreceremos un día gratuito de nuestro servicio de restaurante.</p>
-                    <button>Saber Más</button>
                 </div>
             </div>
             <div>
@@ -65,7 +66,6 @@
                 <div class="ofertasContenido">
                     <h3>Turismo por Barcelona</h3>
                     <p>Por (precio placeholder) por noche, le ofrecemos un servicio de turismo donde un guía de  habla inglesa estará a su  disposición por 2 horas al día.</p>
-                    <button>Saber Más</button>
                 </div>
             </div>
         </div>

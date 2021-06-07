@@ -24,12 +24,33 @@
     </section>
     <section id="contactar" class="anchoReducido">
         <div id="contactar1">
-            <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre*" maxlength="20" autofocus required>
-                <input type="email" name="correo" id="correo" placeholder="Correo Electrónico*" maxlength="60" required>
-                <input type="text" name="asunto" id="asunto" placeholder="Asunto*" maxlength="20" required>
-                <textarea name="mensaje" id="mensaje" placeholder="Mensaje" rows="10"></textarea>
-                <input type="submit" value="Enviar" id ="EnviarContacto">
+            <div id="error"></div>
+            <div id="exito"></div>
+            <form id="formContacto" enctype="multipart/form-data">
+                <?php
+                    if(isset($_SESSION['usuario'])){
+                        include("scripts/conexion.php");
+                        $res = $galador->query("SELECT * FROM usuarios WHERE login = '".$_SESSION['usuario']."'") or die ($galador->$error);
+                        while ($fila = mysqli_fetch_array($res)){
+                ?>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre*" maxlength="20" value="<?php echo $fila['nombre'] ?>">
+                <input type="email" name="correo" id="correo" placeholder="Correo Electrónico*" maxlength="60" value="<?php echo $fila['email'] ?>">
+                <input type="text" name="asunto" id="asunto" placeholder="Asunto*" maxlength="20">
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje*" rows="10"></textarea>
+                <input type="checkbox" name="privacidad" id="privacidad">
+                <label for="privacidad">Acepto la <a href="privacidad.php" target="_blank">política de privacidad</a>*</label><br>
+                <input type="button" value="Enviar" class="EnviarMensaje">
+                <?php
+                }
+                }else{ ?>
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre*" maxlength="20" autofocus>
+                <input type="email" name="correo" id="correo" placeholder="Correo Electrónico*" maxlength="60">
+                <input type="text" name="asunto" id="asunto" placeholder="Asunto*" maxlength="20">
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje*" rows="10"></textarea>
+                <input type="checkbox" name="privacidad" id="privacidad">
+                <label for="privacidad">Acepto la <a href="privacidad.php" target="_blank">política de privacidad</a>*</label><br>
+                <input type="button" value="Enviar" class="EnviarMensaje">
+                <?php } ?>
             </form>
         </div>
         <div id="contactar2">
@@ -44,6 +65,64 @@
 </div>
 <?php include("templates/footer.html")?>
 <script src="scripts/menu.js"></script>
-<script src="scripts/validacion.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".EnviarMensaje").click(function(){
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let asunto = document.getElementById("asunto").value;
+            let mensaje = document.getElementById("mensaje").value;
+            let privacidad = document.getElementById("privacidad");
+
+            let exito = document.getElementById("exito");
+            let error = document.getElementById("error");
+
+            if (nombre.length == 0 || nombre == null || /^\s+$/.test(nombre) || 
+            correo.length == 0 || correo == null || /^\s+$/.test(correo) ||
+            asunto.length == 0 || asunto == null || /^\s+$/.test(asunto) ||
+            mensaje.length == 0 || mensaje == null || /^\s+$/.test(mensaje)){
+                $("#error").html("Todos los campos son obligatorios.");
+                $(error).fadeIn(1000).css("display","inline-block");
+                $(error).fadeOut(5000);
+                return 0;
+            }
+
+            if(!privacidad.checked){
+                $("#error").html("Es obligatorio aceptar la política de privacidad.");
+                $(error).fadeIn(1000).css("display","inline-block");
+                $(error).fadeOut(5000);
+                return 0;
+            }
+
+            if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/).test(correo)){
+                $("#error").html("El formato de correo es incorrecto.");
+                $(error).fadeIn(1000).css("display","inline-block");
+                $(error).fadeOut(5000);
+                return 0;
+            }
+
+            $.ajax({
+            url: "scripts/enviarMensaje.php",
+            type: "POST",
+            data:{
+                usuario: nombre,
+                correo: correo,
+                asunto: asunto,
+                mensaje: mensaje,
+            },
+                success: function (data) {
+                    $("#exito").html("Se ha enviado el mensaje correctamente.");
+                    $(exito).fadeIn(1000).css("display","inline-block");
+                    $(exito).fadeOut(5000);
+                },
+                error: function (data) {
+                    $("#error").html("Ha habido un error enviando el mensaje. Inténtelo de nuevo.");
+                    $(error).fadeIn(1000).css("display","inline-block");
+                    $(error).fadeOut(5000);
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

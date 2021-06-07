@@ -25,7 +25,7 @@
                 <ul>
                     <li><a href="micuenta.php" class="estiloEnlace">Escritorio</a></li>
                     <li><a href="misdatos.php" class="estiloEnlace">Mis Datos</a></li>
-                    <li>Mis Reservas</li>
+                    <li><b>Mis Reservas</b></li>
                     <?php
                     if(isset($_SESSION["admin"])){ ?>
                         <li><a href="usuarios.php" class="estiloEnlace">Usuarios</a></li>

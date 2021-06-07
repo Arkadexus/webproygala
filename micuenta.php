@@ -25,7 +25,7 @@
             <div id="menuUsuario">
                 <h4>Menú</h4>
                 <ul>
-                    <li>Escritorio</li>
+                    <li><b>Escritorio</b></li>
                     <li><a href="misdatos.php" class="estiloEnlace">Mis Datos</a></li>
                     <li><a href="misreservas.php" class="estiloEnlace">Mis Reservas</a></li>
                     <?php

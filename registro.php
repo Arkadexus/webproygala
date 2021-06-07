@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <input type="checkbox" name="privacidad" id="privacidad">
-                    <label for="privacidad">Acepto la política de privacidad*</label><br>
+                    <label for="privacidad">Acepto la <a href="privacidad.php" target="_blank">política de privacidad</a>*</label><br>
                 </div>
                 <div class="formBoton">
                     <input type="button" value="Registrarse" id ="enviarRegistro" name="enviarRegistro" onclick="validarCheckout()">

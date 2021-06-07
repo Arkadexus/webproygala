@@ -103,6 +103,25 @@ header img{
     color: var(--primario);
     transition: all 0.5s;
   }
+
+#navegacionFooter{
+    font-size: 1.2rem;
+    padding-right: 30px;
+  }  
+  #navegacionFooter a{
+    padding-left: 20px;
+  }
+
+  .enlaceFooter{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.5s;
+  }
+
+  .enlaceFooter:hover {
+    color: var(--primario);
+  }
   
   footer .fa{
     padding-right: 15px;
@@ -237,6 +256,9 @@ button{
   padding: 5px 15px;
   font-size: 1.2rem;
   color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.5s;
 }
 button:hover{
   background-color: white;
@@ -257,13 +279,13 @@ button:hover{
 }
 #ofertas p{
   text-align: justify;
-  padding-bottom: 20px;
 }
 #ofertasActuales{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 5%;
   margin: 0 100px;
+  margin-top: 20px;
 }
 #ofertasActuales div{
   background-color:#dfdfdf;
@@ -339,7 +361,16 @@ button:hover{
   padding-bottom: 20px;
 }
 
+#botonReservar{
+  position: relative;
+}
 
+#botonReservar button{
+  position:absolute;
+  bottom: 35vh;
+  left: 50vw;
+  margin-left: -68px;
+}
 
 
 /* RESPONSIVE TABLET*/
@@ -480,5 +511,12 @@ button:hover{
   }
   #zdImagen{
     max-height: 250px;
+  }
+  footer{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #navegacionFooter a{
+    padding:0;
   }
 }

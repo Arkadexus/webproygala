@@ -26,7 +26,6 @@
         <label for="contrasenya">Contraseña</label>
         <input type="password" name="contrasenya" id="contrasenya" minlength="6">
         <div id="recuerdame">
-        <input type="checkbox" name="recordar" id="recordar"><label for="recordar">Recuérdame</label><br><br>
         <input type="button" value="Iniciar Sesión" class="EnviarLogin">
         <!--<a href="#" class="estiloEnlace">¿Olvidaste la contraseña?</a><br>-->
         <a href="registro.php" class="estiloEnlace">Crear una cuenta</a>

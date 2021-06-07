@@ -60,6 +60,7 @@ header img {
 #menu li {
 	display: inline-block;
 	position: relative;
+	z-index:99;
 }
 
 #menu li:hover {
@@ -157,6 +158,25 @@ footer {
 	transition: all 0.5s;
 }
 
+#navegacionFooter{
+    font-size: 1.2rem;
+    padding-right: 30px;
+  }  
+  #navegacionFooter a{
+    padding-left: 20px;
+  }
+
+  .enlaceFooter{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.5s;
+  }
+
+  .enlaceFooter:hover {
+    color: var(--primario);
+  }
+  
 footer .fa {
 	padding-right: 15px;
 }
@@ -403,7 +423,6 @@ input[type="button"]:hover {
 	width: 100%!important;
 	height: 50px;
 	margin-bottom: 25px;
-	margin-top: 0!important;
 	padding: 5px!important;
 }
 
@@ -468,6 +487,29 @@ hr {
 
 #contactar2 span {
 	padding-bottom: 20px;
+}
+
+.compraRealizada{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70vh;
+}
+
+.compraRealizada div{
+	padding: 30px;
+	background-color: #e0e0e0;
+	border: 1px solid black;
+}
+
+.compraRealizada .tituloCompra{
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.descCompra{
+	font-size: 1.2rem;
+	margin-top: 20px;
 }
 
 textarea {
@@ -648,6 +690,7 @@ textarea {
 #headerReserva h1 {
 	color: white;
 	letter-spacing: 1rem;
+	text-align: center;
 }
 
 #contenidoReserva {
@@ -711,6 +754,10 @@ textarea {
 	background-color: #e0e0e0;
 	border: 1px solid black;
 	margin-top: 25px;
+}
+
+.habitacion p{
+	text-align: justify;
 }
 
 .habitacionReserva{
@@ -1003,15 +1050,6 @@ sup {
 	padding-bottom: 10px;
 }
 
-/* RESPONSIVE TABLET */
-@media(max-width: 1100px) {
-	.contenido section {
-		margin: 0 auto;
-		margin-top: 3.5%;
-		padding: 10px;
-	}
-}
-
 .formularioReserva{
 	display: none;
 }
@@ -1062,6 +1100,7 @@ sup {
 dl, ol, ul {
     /* margin-top: 0; */
     margin-bottom: 0rem;
+	padding-left: 0rem;
 }
 
 *, ::after, ::before {
@@ -1071,15 +1110,231 @@ dl, ol, ul {
 .botonAdmin{
 	margin-bottom: 20px;
 }
+
+.modal-body{
+	margin-right: 10px!important;
+}
+
+.bannerPagina{
+	height: 250px;
+	background-image: url(../img/sobre-nosotros.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bannerPagina h1{
+	color:white;
+	font-size: 2rem;
+}
+
+#sobreNosotros{
+	padding-right:20%;
+	padding-left:20%;
+}
+
+#sobreNosotros *, #sobreNosotrosBloques *{
+	margin-bottom: 20px;
+}
+
+#tituloSobreNosotros{
+	color:var(--primario);
+	text-align: center;
+	font-size: 1.6rem;
+}
+
+#sobreNosotros p, #sobreNosotrosBloques p{
+	font-size: 1.2rem;
+	text-align: justify;
+}
+
+#introSobreNosotros{
+	font-size: 1.3rem;
+}
+
+.espacioSuperior{
+	margin-top: 25px;
+}
+
+.centrar{
+	text-align: center!important;
+}
+
+.dosPartes{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#fondoMision{
+	background-image: url(../img/mision.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin:30px;
+}
+
+#fondoVision{
+	background-image: url(../img/vision.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin:30px;
+}
+
+#fondoValores{
+	background-image: url(../img/valores.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	margin:30px;
+}
+
+#sobreNosotrosBloques{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.tituloParrafo{
+	font-size:1.6rem!important;
+	font-weight: 700;
+}
+
+.contenidoDosPartes{
+	padding: 30px;
+	padding-top: 75px;
+	padding-bottom: 75px;
+}
+
+#sobreNosotrosBloques .dosPartes{
+	margin-top: 3.5%;
+}
+
+#misionPadding{
+	padding-top: 130px;
+	padding-bottom: 130px;
+  }
+
+
+#legal{
+	max-width: 1366px;
+	padding:30px;
+	padding-left: 15%;
+	padding-right: 15%;
+	margin-bottom: 80px;
+}
+
+#legal *{
+	margin-bottom: 20px;
+}
+
+#legal ul{
+	padding-left: 20px;
+}
+
+#legal h3{
+	font-size: 1.4rem;
+	color:#3e3e3e;
+}
+
+label a{
+	color:#3e3e3e;
+	text-decoration: none;
+	font-weight: 700;
+	transition: all 0.5s;
+}
+
+label a:hover{
+	color:black;
+}
+
+
+
+/* RESPONSIVE TABLET */
+@media(max-width: 1100px) {
+	.contenido section {
+		margin: 0 auto;
+		margin-top: 3.5%;
+		padding: 10px;
+	}
+	#sobreNosotros{
+		padding-right:10%;
+		padding-left:10%;
+	}
+
+	#sobreNosotrosBloques{
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	#menu{
+		text-align: center;
+	}
+	#buscarReserva{
+		grid-template-columns: 1fr;
+	}
+	#buscarReserva div{
+		margin: 0 auto;
+	}
+
+	#buscarReserva input{
+		width: 100%;
+	}
+
+	#contenidoReserva{
+		grid-template-columns: 1fr;
+	}
+
+	#estanciaFaq{
+		margin-left: 0;
+		margin-top: 20px;
+	}
+
+	#contactar{
+		column-gap: 0px;
+		margin-top: 0px!important;
+	}
+
+	#contactar1, #contactar2{
+		padding: 10px;
+	}
+
+	#micuenta{
+		grid-template-columns: 1fr;
+		row-gap: 20px;
+	}
+
+	#datosUsuario{
+		display: inline-block;
+	}
+
+	#menuUsuario li{
+		display: inline-block;
+	}
+
+	#menuUsuario li:not(:last-child)::after{
+		content : "  | ";
+	}
+
+	#escritorio{
+		padding: 1px;
+	}
+}
   
   /* RESPONSIVE MOVIL*/
 @media(max-width: 767px) {
 	p {
-		font-size: 0.9rem;
+		font-size: 0.9rem!important;
+	}
+
+	h1{
+		font-size: 1.6rem;
 	}
 
 	h2 {
-		font-size: 1.5rem!important;
+		font-size: 1.4rem!important;
 	}
 
 	span {
@@ -1090,9 +1345,177 @@ dl, ol, ul {
 		font-size: 1rem;
 	}
 
+	label{
+		font-size: 1rem;
+	}
+
 	.contenido section {
 		margin: 0 auto;
 		margin-top: 3.5%;
 		padding: 0;
+	}
+
+	.dosPartes{
+		grid-template-columns: 1fr;
+	}
+
+	#fondoMision, #fondoVision, #fondoValores{
+		margin: 0;
+		min-height: 200px;
+	}
+
+	#misionPadding{
+		padding: 10px;
+	}
+
+	.contenidoDosPartes{
+		padding: 10px;
+	}
+
+	#fondoVision{
+		grid-row: 1;
+	}
+
+	.contenedorReservar{
+		margin-top: 50px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	#reservar{
+		padding-bottom: 50px;
+	}
+
+	.habitacion{
+		grid-template-columns: 1fr;
+	}
+
+	.oferta{
+		grid-template-columns: 1fr;
+	}
+
+	#barraBusquedaReserva{
+		grid-template-columns: 1fr;
+	}
+
+	#barraBusquedaReserva span{
+		font-size: 1rem!important;
+	}
+
+	.caracteristicasHabP{
+		grid-template-columns: 2fr 1fr;
+	}
+
+	.habitacion button, .oferta button{
+		width: 90%;
+	}
+
+	.precioTotal:nth-child(3){
+		display: none;
+	}
+
+	.precioTotal button{
+		grid-row: 3;
+		width: 185%;
+	}
+
+	#faqReserva{
+		margin-bottom: 35px;
+	}
+
+	.formCheckout{
+		grid-template-columns: 1fr;
+	}
+
+	#contactar{
+		grid-template-columns: 1fr;
+		grid-gap: 0px;
+	}
+
+	input[type="button"]{
+		width: 90%;
+	}
+
+	#introContactar{
+		padding: 10px;
+	}
+
+	input{
+		width: 95%;
+	}
+
+	textarea{
+		width: 95%;
+	}
+
+	#contactar2{
+		margin-bottom: 20px;
+	}
+
+	#baseRegistro{
+		grid-template-columns: 1fr;
+		margin-bottom: 150px;
+	}
+
+	#registro h2{
+		font-size: 1.2rem!important;
+	}
+
+	#login{
+		margin-left: 10px;
+		margin-right: 10px;
+		padding:10px;
+	}
+
+	.EnviarLogin{
+		width:95%!important;
+	}
+
+	#escritorio{
+		grid-template-columns: 1fr;
+	}
+
+	#micuenta{
+		padding-right: 10px;
+		padding-left: 10px;
+		margin-bottom: 150px;
+	}
+
+	#escritorio div{
+		width: initial;
+	}
+
+	.formMisDatos{
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.habitacionReserva{
+		grid-template-columns: 1fr;
+	}
+
+	button{
+		width:90%;
+	}
+
+	#tablaAdmin_wrapper{
+		width: 80vw;
+	}
+
+	footer{
+		display:grid;
+		grid-template-columns: 1fr;
+	  }
+	  #navegacionFooter{
+		padding: 0;
+		text-align: center;
+	  }
+	  #iconosFooter{
+		  display: flex;
+		  justify-content: center;
+	  }
+	
+	.antiMargen footer{
+		bottom: initial;
 	}
 }
